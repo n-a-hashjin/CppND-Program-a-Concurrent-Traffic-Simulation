@@ -24,7 +24,7 @@ public:
     void permitEntryToFirstInQueue();
 
 private:
-    std::vector<std::shared_ptr<Vehicle>> _vehicles;          // list of all vehicles waiting to enter this intersection
+    std::vector<std::shared_ptr<Vehicle>> _vehicles; // list of all vehicles waiting to enter this intersection
     std::vector<std::promise<void>> _promises; // list of associated promises
     std::mutex _mutex;
 };
@@ -41,7 +41,10 @@ public:
     // typical behaviour methods
     void addVehicleToQueue(std::shared_ptr<Vehicle> vehicle);
     void addStreet(std::shared_ptr<Street> street);
-    std::vector<std::shared_ptr<Street>> queryStreets(std::shared_ptr<Street> incoming); // return pointer to current list of all outgoing streets
+
+    // return pointer to current list of all outgoing streets
+    std::vector<std::shared_ptr<Street>> queryStreets(std::shared_ptr<Street> incoming);
+    
     void simulate();
     void vehicleHasLeft(std::shared_ptr<Vehicle> vehicle);
     bool trafficLightIsGreen();
