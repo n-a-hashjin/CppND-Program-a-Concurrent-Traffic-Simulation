@@ -23,8 +23,8 @@ template <class T>
 class MessageQueue
 {
 public:
-    void send(T &&currentPhase){};
-    T receive(){};
+    void send(T &&currentPhase);
+    T receive();
 private:
     std::deque<T> _queue;
     std::mutex _mtx;
@@ -42,7 +42,7 @@ class TrafficLight : TrafficObject
 {
 public:
     // constructor / desctructor
-    TrafficLight(){}
+    TrafficLight();
     ~TrafficLight(){}
 
     // getters / setters
